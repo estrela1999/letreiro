@@ -3,37 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Letreiro Motivacional</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      width: 800px;
-      height: 200px;
-      border: 2px solid #333;
-      overflow: hidden;
-      position: relative;
-      padding: 20px;
-      box-sizing: border-box;
-      background-color: #fff;
-    }
-
-    .marquee {
-      position: absolute;
-      white-space: nowrap;
-      font-size: 24px;
-      font-weight: bold;
-      color: #0077cc;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -41,29 +11,6 @@
       "Acredite em você e tudo será possível!"
     </div>
   </div>
-
-  <script>
-    const marquee = document.getElementById('marquee');
-    const container = document.querySelector('.container');
-    let direction = 1; // 1 = direita, -1 = esquerda
-    let position = 0;
-    const speed = 2; // pixels por frame
-
-    function animate() {
-      const maxPosition = container.clientWidth - marquee.clientWidth;
-      position += direction * speed;
-
-      if (position >= maxPosition || position <= 0) {
-        direction *= -1; // inverte a direção
-      }
-
-      marquee.style.left = position + 'px';
-      requestAnimationFrame(animate);
-    }
-
-    // Inicializa a posição
-    marquee.style.left = '0px';
-    animate();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
